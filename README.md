@@ -20,6 +20,30 @@ The [maintenance template](./src/pages/maintenance.html) is served using Cloudfl
 
 If you are making changes to the script, then update code in git first and then upload it to Cloudflare.
 
+## Enabling Maintenance Mode
+
+To enable maintenance mode:
+
+1. go to https://dash.cloudflare.com/
+1. go to contra.com
+1. go to Workers
+1. edit "maintenance" worker
+1. replace route "contra.com/maintenance" with "contra.com/*"
+
+To disable maintenance mode:
+
+1. go to https://dash.cloudflare.com/
+1. go to contra.com
+1. go to Workers
+1. edit "maintenance" worker
+1. replace route "contra.com/*" with "contra.com/maintenance"
+
+Note: route changes take anywhere from 5 to 30 seconds to propagate.
+
+This Loom guides through the steps of enabling / disabling Maintenance mode:
+
+https://www.loom.com/share/04e650339f8f4f9abccbf0030d52f463
+
 ## Development
 
 Use `npm run build` to build ejs templates. The resulting files are stored in `./docs`.

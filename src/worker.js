@@ -7,5 +7,14 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest() {
-  return fetch("https://contra.github.io/contra-status-pages/maintenance.html");
+  const response = await fetch(
+    "https://contra.github.io/contra-status-pages/maintenance.html"
+  );
+
+  const nextResponse = new Response(response.body, response);
+
+  nextResponse.headers.delete("cache-control");
+  nextResponse.headers.set("cache-control", "no-store");
+
+  return nextResponse;
 }
