@@ -6,9 +6,7 @@ addEventListener("fetch", (event) => {
   );
 });
 
-async function handleRequest(request) {
-  const { pathname } = new URL(request.url);
-
+async function handleRequest() {
   return fetch(
     "https://contra.github.io/contra-status-pages/generated/maintenance.html"
   );
