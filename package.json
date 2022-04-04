@@ -1,13 +1,13 @@
 {
   "devDependencies": {
+    "ejs": "^3.1.6",
+    "http-server": "^14.1.0",
     "prettier": "^2.6.2"
   },
   "private": true,
   "scripts": {
-    "start": "http-server -c-1 ./pages",
-    "lint": "prettier --ignore-path .gitignore --check ./pages"
-  },
-  "dependencies": {
-    "http-server": "^14.1.0"
+    "build": "ejs src/pages/1xxx.html -o ./generated/1xxx.html && ejs src/pages/5xx.html -o ./generated/5xx.html && ejs src/pages/maintenance.html -o ./generated/maintenance.html",
+    "start": "http-server -c-1 ./generated",
+    "lint": "prettier --ignore-path .gitignore --check ./src"
   }
 }

@@ -4,17 +4,39 @@ Static HTML pages that are displayed when Cloudflare detects an outage or there 
 
 ## Cloudflare Setup
 
+### Configuring Error Pages
+
 These pages are configured under `contra.com > Custom Pages` at https://cloudflare.com/.
 
-* `500 Class Errors` has to map to `pages/5xx.html`
-* `1000 Class Errors` has to map to `pages/1xxx.html`
+* `500 Class Errors` has to map to [src/pages/5xx.html](./src/pages/5xx.html)
+* `1000 Class Errors` has to map to [src/pages/1xxx.html](./src/pages/1xxx.html)
+
+### Configuring Maintenance Page
+
+The [maintenance template](./src/pages/maintenance.html) is served using Cloudflare Worker.
+
+* The script is available [src/worker.js](./src/worker.js)
+* Worker is hosted at https://maintenance.contrawork.workers.dev/
+
+If you are making changes to the script, then update code in git first and then upload it to Cloudflare.
 
 ## Development
 
-There are no build steps in the project – HTML and CSS are hand crafted.
+Use `npm run build` to build ejs templates. The resulting files are stored in `./generated`.
 
-Use `npm run start` to launch HTTP server for serving files in `./pages`.
+Use `npm run start` to launch HTTP server and serve files in `./generated`.
 
 ```bash
+npm run build
 npm run start
 ```
+
+You must commit the generated files to the repository.
+
+## Hosting
+
+These pages are hosted using GitHub Pages:
+
+* https://contra.github.io/contra-status-pages/generated/1xxx.html
+* https://contra.github.io/contra-status-pages/generated/5xx.html
+* https://contra.github.io/contra-status-pages/generated/maintenance.html

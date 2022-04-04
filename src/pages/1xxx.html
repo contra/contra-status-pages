@@ -3,19 +3,19 @@
   <head>
     <title>Contra</title>
 
-    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      <%- include('./src/pages/styles.css') %>
+    </style>
   </head>
 
   <body>
     <div id="main">
-      <div id="logo">
-        <img src="./contra-logo.svg" />
-      </div>
+      <div id="logo"><%- include('./src/pages/contra-logo.svg') %></div>
       <div id="user-message">
         <p>Briefly unavailable due to an error.</p>
         <p>Contra team is aware of the outage and working on a fix.</p>
       </div>
-      <div id="context">::CLOUDFLARE_ERROR_500S_BOX::</div>
+      <div id="context">::CLOUDFLARE_ERROR_1000S_BOX::</div>
     </div>
   </body>
 </html>

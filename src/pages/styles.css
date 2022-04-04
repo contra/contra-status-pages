@@ -1,12 +1,9 @@
-@font-face {
-  font-family: Inter;
-  src: url(./inter-latin.woff2);
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 body {
   background: #000;
   color: #fff;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;

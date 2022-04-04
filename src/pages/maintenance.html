@@ -3,14 +3,14 @@
   <head>
     <title>Contra</title>
 
-    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      <%- include('./src/pages/styles.css') %>
+    </style>
   </head>
 
   <body>
     <div id="main">
-      <div id="logo">
-        <img src="./contra-logo.svg" />
-      </div>
+      <div id="logo"><%- include('./src/pages/contra-logo.svg') %></div>
       <div id="user-message">
         <p>Briefly unavailable for scheduled maintenance.</p>
       </div>
