@@ -7,7 +7,5 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest() {
-  return fetch(
-    "https://contra.github.io/contra-status-pages/maintenance.html"
-  );
+  return fetch("https://contra.github.io/contra-status-pages/maintenance.html");
 }
