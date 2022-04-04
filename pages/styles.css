@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Inter;
+  src: url(./inter-latin.woff2);
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  padding: 24px;
+  width: 640px;
+}
+
+#main > * + * {
+  margin: 16px 0;
+}
+
+#user-message > p + p {
+  margin: 8px 0;
+}
+
+#context {
+  color: #999;
+}
