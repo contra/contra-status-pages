@@ -22,21 +22,24 @@ If you are making changes to the script, then update code in git first and then 
 
 ## Development
 
-Use `npm run build` to build ejs templates. The resulting files are stored in `./generated`.
+Use `npm run build` to build ejs templates. The resulting files are stored in `./docs`.
 
-Use `npm run start` to launch HTTP server and serve files in `./generated`.
+Use `npm run start` to launch HTTP server and serve files in `./docs`.
 
 ```bash
 npm run build
 npm run start
 ```
 
-You must commit the generated files to the repository.
+Notes:
+
+* You must commit the generated (`./docs`) files to the repository.
+* The use of `./docs` directory name is forced by GitHub Pages configuration.
 
 ## Hosting
 
 These pages are hosted using GitHub Pages:
 
-* https://contra.github.io/contra-status-pages/generated/1xxx.html
-* https://contra.github.io/contra-status-pages/generated/5xx.html
-* https://contra.github.io/contra-status-pages/generated/maintenance.html
+* https://contra.github.io/contra-status-pages/1xxx.html
+* https://contra.github.io/contra-status-pages/5xx.html
+* https://contra.github.io/contra-status-pages/maintenance.html

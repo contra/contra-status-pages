@@ -6,8 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "build": "ejs src/pages/1xxx.html -o ./generated/1xxx.html && ejs src/pages/5xx.html -o ./generated/5xx.html && ejs src/pages/maintenance.html -o ./generated/maintenance.html",
-    "start": "http-server -c-1 ./generated",
+    "build": "ejs src/pages/1xxx.html -o ./docs/1xxx.html && ejs src/pages/5xx.html -o ./docs/5xx.html && ejs src/pages/maintenance.html -o ./docs/maintenance.html",
+    "start": "http-server -c-1 ./docs",
     "lint": "prettier --ignore-path .gitignore --check ./src"
   }
 }
