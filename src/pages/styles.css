@@ -35,3 +35,15 @@ body {
 #context {
   color: #999;
 }
+
+.cf-error-details h1 {
+  font-size: 24px;
+}
+
+.cf-error-details > * {
+  margin: 16px 0;
+}
+
+.cf-error-details li {
+  list-style: none;
+}

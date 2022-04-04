@@ -42,6 +42,18 @@ body {
   color: #999;
 }
 
+.cf-error-details h1 {
+  font-size: 24px;
+}
+
+.cf-error-details > * {
+  margin: 16px 0;
+}
+
+.cf-error-details li {
+  list-style: none;
+}
+
     </style>
   </head>
 
@@ -56,7 +68,12 @@ body {
         <p>Briefly unavailable due to an error.</p>
         <p>Contra team is aware of the outage and working on a fix.</p>
       </div>
-      <div id="context">::CLOUDFLARE_ERROR_500S_BOX::</div>
+      <div id="context">
+        <details>
+          <summary>Error Details</summary>
+          ::CLOUDFLARE_ERROR_500S_BOX::
+        </details>
+      </div>
     </div>
   </body>
 </html>
