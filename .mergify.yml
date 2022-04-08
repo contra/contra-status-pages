@@ -1,0 +1,50 @@
+queue_rules:
+  - name: default
+    # speculative_checks: 3
+    # batch_size: 2
+    conditions:
+      - check-success=Lint
+pull_request_rules:
+  - name: approve self-reviewed PR
+    conditions:
+      # If you must merge a PR without a review, then use this label
+      # to have Mergify merge it for you instead of merging it yourself.
+      # This way we at least guarantee that all automated checks pass
+      # before changes are merged to the main branch.
+      - "label=self-review"
+    actions:
+      review:
+        type: APPROVE
+        message: Automatically approving self-reviewed PR
+  - name: label PRs ready for review
+    conditions:
+      - base=main
+      - -draft
+      - check-success=Lint
+    actions:
+      label:
+        add:
+          # Addition of this label triggers a GitHub webhook
+          # that sends a Slack message to #prs channel.
+          - ready-for-review
+  - name: queue approved PR
+    conditions:
+      - base=main
+      - -draft
+      - "#approved-reviews-by>=1"
+      - "#changes-requested-reviews-by=0"
+      - check-success=Lint
+    actions:
+      queue:
+        name: default
+        method: rebase
+        priority: high
+  - name: close stale pull request
+    conditions:
+      - base=main
+      - -closed
+      - updated-at<14 days ago
+    actions:
+      close:
+        message: |
+          This pull request looks stale. Feel free to reopen it if you think it is a mistake.
